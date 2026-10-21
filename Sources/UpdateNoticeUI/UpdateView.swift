@@ -9,10 +9,11 @@ struct UpdateView: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
-            Image(nsImage: NSApp.applicationIconImage)
+            Image(systemName: "arrow.down.circle.fill")
                 .resizable()
-                .interpolation(.high)
-                .frame(width: 56, height: 56)
+                .scaledToFit()
+                .foregroundStyle(Color.accentColor)
+                .frame(width: 48, height: 48)
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 12) {
                 Text(strings.windowTitle(model.appName, model.update.version))
