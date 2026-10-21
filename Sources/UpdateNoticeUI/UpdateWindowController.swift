@@ -8,7 +8,9 @@ import UpdateNotice
 @MainActor
 public final class UpdateWindowController: NSObject, NSWindowDelegate {
     private let checker: UpdateChecker
-    private let strings: UpdateStrings
+    /// Replace it when the app language changes. A window that is open keeps its old text until
+    /// it is shown again.
+    public var strings: UpdateStrings
     private let actions: any UpdateActions
     private var window: NSWindow?
     private var shownVersion: String?
